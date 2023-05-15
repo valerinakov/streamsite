@@ -1,0 +1,9 @@
+.google-doc p{
+    text-align: left;
+    padding-bottom:20px;
+}
+
+div iframe{
+    width: 100%;
+    height: 75vh;
+}
