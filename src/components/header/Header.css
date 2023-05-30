@@ -11,12 +11,21 @@ nav{
     width:100%;
 }
 
+.navbar{
+    height:70px;
+}
+
 label.logo{
     color:white;
     font-size: 35px;
     line-height:65px;
     padding: 0 100px;
     font-weight: bold;
+}
+
+label.logo img{
+    height:75px;
+    width:75px;
 }
 
 nav ul{
@@ -58,6 +67,7 @@ a.active,a:hover{
 }
 
 ul.socials {
+    /* padding-top:150px; */
     z-index:5;
     padding-right:100px;
 }
@@ -67,11 +77,12 @@ ul.socials li {
 }
 
 ul.socials li a i:hover {
-    color:black;
+    color:lightgrey;
     transition: .4s;
 }
 
 .discord{
+    z-index: 0;
     display:flex;
     flex-direction: row;
     width:fit-content;
@@ -89,14 +100,17 @@ ul.socials li a i:hover {
 }
 
 .discord div p{
+    text-align: center;
     padding-top:3px;
     font-size: 1.5em;
 }
 
-.discord div i {
-    color: #7289d9;
-    font-size:4em;
-    
+.discord div p a {
+    color:white;
+}
+
+.discord div p a:hover {
+    color:lightgrey;
 }
 
 @media (max-width: 1110px){
@@ -128,22 +142,31 @@ ul.socials li a i:hover {
 }
 
 @media (max-width:910px){
-    .checkbtn{
-        display:block;
+    .discord{
+        position: relative;
+        left:33px;
     }
 
+    .checkbtn{
+        display:block;
+        position: relative;
+        z-index: 2;
+    }
+
+
     ul{
+        z-index: 1;
         position:fixed;
         width:100%;
         height:100vh;
         background:#2c3e50;
-        top:80px;
+        top:0px;
         left: -100%;
         text-align: center;
         transition: all .5s;
     }
 
-    ul.socials{
+    ul.socials{        
         margin-top: 175px;
         display: grid;
         grid-template-rows: 15px 15px;
@@ -173,11 +196,6 @@ ul.socials li a i:hover {
 
     #check:checked ~ ul {
         left: 0;
-    }
-
-    .discord {
-        position: relative;
-        left:25px;
     }
 
     .discord div p {
